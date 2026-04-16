@@ -1,0 +1,104 @@
+@import url('https://fonts.googleapis.com/css2?family=Archivo+Black&family=Hind:wght@300;400;500;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    /* Lilac & Sky palette */
+    --background: 38 100% 97%;          /* warm cream #fffaf0 */
+    --foreground: 260 40% 12%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 260 40% 12%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 260 40% 12%;
+
+    --primary: 258 90% 66%;             /* deep lilac #8b5cf6 */
+    --primary-foreground: 38 100% 97%;
+
+    --secondary: 199 95% 86%;           /* sky blue #bae6fd */
+    --secondary-foreground: 260 40% 12%;
+
+    --muted: 38 60% 93%;
+    --muted-foreground: 260 15% 40%;
+
+    --accent: 252 95% 85%;              /* lilac #c4b5fd */
+    --accent-foreground: 260 40% 12%;
+
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 252 50% 88%;
+    --input: 252 50% 88%;
+    --ring: 258 90% 66%;
+
+    --radius: 1.25rem;
+
+    /* Custom tokens */
+    --sky: 199 95% 86%;
+    --lilac: 252 95% 85%;
+    --lilac-deep: 258 90% 66%;
+    --cream: 38 100% 97%;
+    --sun: 45 100% 70%;
+
+    --gradient-hero: linear-gradient(135deg, hsl(199 95% 92%) 0%, hsl(252 95% 92%) 50%, hsl(38 100% 97%) 100%);
+    --gradient-lilac: linear-gradient(135deg, hsl(258 90% 66%), hsl(280 90% 70%));
+    --gradient-sky: linear-gradient(135deg, hsl(199 95% 80%), hsl(252 95% 85%));
+
+    --shadow-soft: 0 10px 30px -10px hsl(258 90% 66% / 0.25);
+    --shadow-pop: 6px 6px 0 0 hsl(260 40% 12%);
+    --shadow-pop-sm: 3px 3px 0 0 hsl(260 40% 12%);
+
+    --transition-bounce: all 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+    font-family: 'Hind', sans-serif;
+    font-weight: 400;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Archivo Black', sans-serif;
+    letter-spacing: -0.02em;
+    line-height: 1.05;
+  }
+}
+
+@layer components {
+  .pop-card {
+    @apply bg-card border-2 border-foreground rounded-[var(--radius)];
+    box-shadow: var(--shadow-pop);
+    transition: var(--transition-bounce);
+  }
+  .pop-card:hover {
+    transform: translate(-2px, -2px);
+    box-shadow: 8px 8px 0 0 hsl(var(--foreground));
+  }
+  .pop-card-sm {
+    @apply bg-card border-2 border-foreground rounded-[var(--radius)];
+    box-shadow: var(--shadow-pop-sm);
+  }
+  .chip {
+    @apply inline-flex items-center px-3 py-1 rounded-full text-sm font-semibold border-2 border-foreground;
+  }
+  .wiggle-on-hover {
+    transition: transform 0.2s ease;
+  }
+  .wiggle-on-hover:hover {
+    transform: rotate(-2deg) scale(1.03);
+  }
+  .input-pop {
+    @apply w-full px-4 py-2.5 rounded-xl border-2 border-foreground bg-background font-medium text-sm;
+    @apply focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2 focus:ring-offset-card;
+  }
+}
