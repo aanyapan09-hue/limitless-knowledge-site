@@ -12,7 +12,7 @@
             --yellow: #ffd966;
             --blue: #b9e9ff;
             --light-pink: #ffdae0;
-            --pale-mint: #c1ebd1; /* Perfect matching mint green */
+            --pale-mint: #c1ebd1;
             --off-white: #faf8ff; 
             --black: #1a1a1a;
             --white: #ffffff;
@@ -21,7 +21,6 @@
         * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Inter', sans-serif; }
         body { background-color: var(--off-white); color: var(--black); line-height: 1.6; }
 
-        /* --- Navigation --- */
         nav {
             display: flex; justify-content: space-between; align-items: center;
             padding: 20px 5%; background: var(--white); border-bottom: 3px solid var(--black);
@@ -35,77 +34,98 @@
             border-radius: 50px; border: 2px solid var(--black); box-shadow: 3px 3px 0px var(--black);
         }
 
-        /* --- Header --- */
         header { padding: 80px 10% 40px 10%; }
         .badge {
             background: var(--light-purple); padding: 6px 18px; border-radius: 50px;
             border: 2px solid var(--black); font-size: 0.85rem; font-weight: 800; display: inline-block; margin-bottom: 20px;
         }
         h1 { font-size: clamp(2.5rem, 6vw, 4.5rem); font-weight: 900; line-height: 1.1; margin-bottom: 20px; }
-        .intro-text { max-width: 600px; font-size: 1.2rem; font-weight: 500; color: #333; }
+        .intro-text { max-width: 700px; font-size: 1.2rem; font-weight: 500; color: #333; }
 
-        /* --- Counselors Grid --- */
         .counselors-container {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 30px;
+            display: flex;
+            flex-direction: column;
+            gap: 40px;
             padding: 20px 10% 100px 10%;
+            max-width: 1200px;
+            margin: 0 auto;
         }
 
         .counselor-card {
-            border: 3px solid var(--black);
-            border-radius: 25px;
-            padding: 40px 30px;
-            box-shadow: 8px 8px 0px var(--black);
+            border: 4px solid var(--black);
+            border-radius: 30px;
+            padding: 50px 40px;
+            box-shadow: 12px 12px 0px var(--black);
             display: flex;
-            flex-direction: column;
-            justify-content: space-between;
+            gap: 40px;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+
+        .card-info {
+            flex: 2;
+            min-width: 280px;
         }
 
         .icon-circle {
-            width: 60px; height: 60px;
+            width: 70px; height: 70px;
             background: white;
-            border: 2px solid var(--black);
+            border: 3px solid var(--black);
             border-radius: 50%;
             display: flex; align-items: center; justify-content: center;
-            font-size: 1.5rem;
-            margin-bottom: 25px;
-            box-shadow: 3px 3px 0px var(--black);
+            font-size: 2rem;
+            margin-bottom: 20px;
+            box-shadow: 4px 4px 0px var(--black);
         }
 
-        .name { font-size: 2rem; font-weight: 900; margin-bottom: 5px; line-height: 1.2; }
-        .role { font-size: 0.8rem; font-weight: 900; text-transform: uppercase; letter-spacing: 1px; color: #333; margin-bottom: 20px; display: block; }
-        .bio { font-size: 0.95rem; font-weight: 500; color: #222; margin-bottom: 30px; }
+        .name { font-size: 2.5rem; font-weight: 900; margin-bottom: 5px; line-height: 1.2; }
+        .role { font-size: 0.9rem; font-weight: 900; text-transform: uppercase; letter-spacing: 1px; color: #1a1a1a; margin-bottom: 20px; display: block; }
+        .bio { font-size: 1.05rem; font-weight: 500; color: #1a1a1a; }
         
-        /* Email Contact Link Box */
+        .card-action {
+            flex: 1;
+            min-width: 250px;
+            display: flex;
+            justify-content: flex-end;
+            align-items: center;
+        }
+
         .email-link {
-            display: inline-block;
-            margin-top: auto;
-            padding: 10px 15px;
+            width: 100%;
+            max-width: 320px;
+            padding: 18px 25px;
             background: var(--white);
-            border: 2px solid var(--black);
-            border-radius: 12px;
+            border: 3px solid var(--black);
+            border-radius: 16px;
             color: var(--black);
             text-decoration: none;
-            font-weight: 700;
-            font-size: 0.85rem;
+            font-weight: 800;
+            font-size: 1rem;
             text-align: center;
-            box-shadow: 3px 3px 0px var(--black);
+            box-shadow: 5px 5px 0px var(--black);
             transition: transform 0.1s, box-shadow 0.1s;
             word-break: break-all;
         }
         .email-link:hover {
-            transform: translate(-1px, -1px);
-            box-shadow: 4px 4px 0px var(--black);
+            transform: translate(-2px, -2px);
+            box-shadow: 7px 7px 0px var(--black);
             background-color: #fafafa;
         }
+        .email-link:active {
+            transform: translate(2px, 2px);
+            box-shadow: 3px 3px 0px var(--black);
+        }
 
-        /* Card Background Colors styling */
         .card-purple { background-color: var(--light-purple); }
         .card-pink { background-color: var(--light-pink); }
         .card-blue { background-color: var(--blue); }
         .card-mint { background-color: var(--pale-mint); }
 
+        @media (max-width: 900px) {
+            .counselor-card { flex-direction: column; align-items: flex-start; gap: 20px; padding: 35px 25px; }
+            .card-action { justify-content: flex-start; width: 100%; }
+            .email-link { max-width: 100%; }
+        }
         @media (max-width: 768px) {
             header, .counselors-container { padding-left: 5%; padding-right: 5%; }
         }
@@ -132,49 +152,57 @@
     <header>
         <span class="badge">Meet the team</span>
         <h1>The four students behind Limitless Knowledge.</h1>
-        <p class="intro-text">We're high schoolers who love teaching, building, and making summer unforgettable for younger kids. Here's who you'll meet at camp.</p>
+        <p class="intro-text">We're high schoolers who love teaching, building, and making summer unforgettable for younger kids. Here's who you'll meet in our program.</p>
     </header>
 
     <section class="counselors-container">
         
         <div class="counselor-card card-purple">
-            <div>
+            <div class="card-info">
                 <div class="icon-circle">💻</div>
                 <h2 class="name">Aanya</h2>
                 <span class="role">Founder & English Head</span>
                 <p class="bio">Hello! My name is Aanya and I am a rising junior at Neuqua Valley High School and I am the General Head of Limitless Knowledge. I am so excited to help the future generation of students here in Naperville hone their skills and help prepare them for high school! I love to read—I could read all day if I had the chance—and listen to music. I can’t wait to get to know everyone this summer! Please feel free to contact me with any questions about our organization, I would be happy to respond!</p>
             </div>
-            <a href="mailto:aanyapan09@gmail.com" class="email-link">✉ aanyapan09@gmail.com</a>
+            <div class="card-action">
+                <a href="mailto:aanyapan09@gmail.com" class="email-link">✉ aanyapan09@gmail.com</a>
+            </div>
         </div>
 
         <div class="counselor-card card-pink">
-            <div>
+            <div class="card-info">
                 <div class="icon-circle">📚</div>
                 <h2 class="name">Shreya</h2>
                 <span class="role">Math Lead</span>
                 <p class="bio">Hello! I am Shreya and I am a Junior at Neuqua Valley. I am the head of math at Limitless Knowledge. I am pleased to be part of your child's journey as they grow and become better people and am determined to teach them the skills they need. I love to draw and hang out with my pet birds in my free time and I hope I can make your summer a bit more educational.</p>
             </div>
-            <a href="mailto:shreyacha1223@gmail.com" class="email-link">✉ shreyacha1223@gmail.com</a>
+            <div class="card-action">
+                <a href="mailto:shreyacha1223@gmail.com" class="email-link">✉ shreyacha1223@gmail.com</a>
+            </div>
         </div>
 
         <div class="counselor-card card-blue">
-            <div>
+            <div class="card-info">
                 <div class="icon-circle">🔬</div>
                 <h2 class="name">Harshita</h2>
                 <span class="role">Science Lead</span>
                 <p class="bio">Hello! My name’s Harshita, a rising junior at Neuqua Valley. As the Head of Science at Limitless Knowledge, my goal is to spark fascination and the urge to learn more, inspiring these curious minds to think critically and positively. With a passion for the sciences like biology, chemistry, and anatomy, I’m excited to teach and guide these students to better heights! When I’m taking a break from experiments, I spend my time reading fantasy and science fiction, practicing my black belt skills, and playing badminton in my free time! Feel free to contact me with any questions or concerns.</p>
             </div>
-            <a href="mailto:jeyanthharshita@gmail.com" class="email-link">✉ jeyanthharshita@gmail.com</a>
+            <div class="card-action">
+                <a href="mailto:jeyanthharshita@gmail.com" class="email-link">✉ jeyanthharshita@gmail.com</a>
+            </div>
         </div>
 
         <div class="counselor-card card-mint">
-            <div>
+            <div class="card-info">
                 <div class="icon-circle">🎨</div>
                 <h2 class="name">Shweta</h2>
                 <span class="role">Art & HR Lead</span>
                 <p class="bio">Hi! My name is Shweta and I am a rising junior at Neuqua Valley High School. I am the department head of Art and HR manager for Limitless Knowledge. I am determined to coach and guide the younger generations to prepare them for their future school years. I love to be creative whenever I can, and I firmly believe that Art is a core subject and principle that kids should have. I love finding new methods to study, teaching people my knowledge, and I’m excited to use the resources we have here at Naperville to enlighten the younger generation.</p>
             </div>
-            <a href="mailto:shwetacha22@gmail.com" class="email-link">✉ shwetacha22@gmail.com</a>
+            <div class="card-action">
+                <a href="mailto:shwetacha22@gmail.com" class="email-link">✉ shwetacha22@gmail.com</a>
+            </div>
         </div>
 
     </section>
