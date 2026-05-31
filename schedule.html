@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Schedule | Limitless Knowledge</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --purple: #9d73ff;
+            --light-purple: #c3adff;
+            --yellow: #ffd966;
+            --blue: #b9e9ff;
+            --off-white: #faf8ff; 
+            --black: #1a1a1a;
+            --white: #ffffff;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Inter', sans-serif; }
+        body { background-color: var(--off-white); color: var(--black); line-height: 1.5; padding-bottom: 100px; }
+
+        /* --- Navigation --- */
+        nav {
+            display: flex; justify-content: space-between; align-items: center;
+            padding: 20px 5%; background: var(--white); border-bottom: 3px solid var(--black);
+            position: sticky; top: 0; z-index: 1000;
+        }
+        .logo { font-weight: 900; font-size: 1.5rem; display: flex; align-items: center; gap: 10px; text-decoration: none; color: black; }
+        .nav-links { display: flex; gap: 20px; list-style: none; align-items: center; }
+        .nav-links a { text-decoration: none; color: var(--black); font-weight: 700; font-size: 0.9rem; }
+        .enroll-nav-btn {
+            background: var(--purple); color: white !important; padding: 10px 25px;
+            border-radius: 50px; border: 2px solid var(--black); box-shadow: 3px 3px 0px var(--black);
+        }
+
+        /* --- Header --- */
+        header { padding: 80px 10% 40px 10%; text-align: left; }
+        .badge {
+            background: var(--yellow); padding: 6px 18px; border-radius: 50px;
+            border: 2px solid var(--black); font-size: 0.85rem; font-weight: 800; display: inline-block; margin-bottom: 20px;
+        }
+        h1 { font-size: clamp(2.5rem, 6vw, 4rem); font-weight: 900; line-height: 1.1; margin-bottom: 15px; }
+        .intro-text { max-width: 600px; font-size: 1.1rem; font-weight: 500; color: #444; }
+
+        /* --- Schedule Container --- */
+        .schedule-container {
+            display: flex; flex-direction: column; gap: 20px; padding: 0 10%;
+        }
+
+        .day-row { display: flex; align-items: stretch; gap: 25px; }
+
+        .day-label {
+            min-width: 100px; height: fit-content; background: var(--black); color: white;
+            padding: 15px; border-radius: 15px; text-align: center;
+        }
+        .day-label span { display: block; font-weight: 900; font-size: 1.2rem; }
+        .special-tag { 
+            display: inline-block; background: var(--yellow); color: black; 
+            font-size: 0.65rem; font-weight: 900; padding: 2px 8px; border-radius: 50px; margin-top: 5px;
+        }
+
+        .content-card {
+            flex: 1; background: white; border: 3px solid var(--black); border-radius: 20px;
+            padding: 25px 35px; box-shadow: 6px 6px 0px var(--black);
+        }
+        .content-card h2 { font-size: 1.8rem; font-weight: 900; margin-bottom: 15px; }
+        
+        .activity-group { margin-bottom: 10px; }
+        .activity-group strong { font-weight: 900; color: var(--purple); text-transform: uppercase; font-size: 0.8rem; letter-spacing: 0.5px; }
+        .activity-group p { font-size: 0.95rem; font-weight: 500; margin-top: 2px; }
+
+        /* Highlights for special days */
+        .bg-highlight .content-card { background-color: #d8c5ff; }
+
+        @media (max-width: 768px) {
+            .day-row { flex-direction: column; }
+            .day-label { min-width: 100%; }
+            .schedule-container { padding: 0 5%; }
+        }
+    </style>
+</head>
+<body>
+
+    <nav>
+        <a href="index.html" class="logo">
+            <div style="background: var(--purple); width: 32px; height: 32px; border-radius: 8px; border: 2px solid black; display: flex; align-items: center; justify-content: center; color: white;">✦</div>
+            Limitless Knowledge
+        </a>
+        <ul class="nav-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="counselors.html">Counselors</a></li>
+            <li><a href="curriculum.html">Curriculum</a></li>
+            <li><a href="schedule.html">Schedule</a></li>
+            <li><a href="supplies.html">Supplies</a></li>
+            <li><a href="enroll.html" class="enroll-nav-btn">Enroll</a></li>
+        </ul>
+    </nav>
+
+    <header>
+        <span class="badge">9 days of fun & strategy</span>
+        <h1>The full camp schedule.</h1>
+        <p class="intro-text">Day by day, here’s what your camper will be up to. We rotate subject blocks seamlessly so camp always stays fast-paced and exciting.</p>
+    </header>
+
+    <section class="schedule-container">
+        
+        <div class="day-row bg-highlight">
+            <div class="day-label">
+                <span>Day 1</span>
+                <div class="special-tag">✦ Intro</div>
+            </div>
+            <div class="content-card">
+                <h2>Orientation Day</h2>
+                <div class="activity-group">
+                    <strong>Parents & Campers</strong>
+                    <p>Welcome orientation, campus walk-through, meet-the-counselors, and distribution of baseline materials.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="day-row">
+            <div class="day-label"><span>Day 2</span></div>
+            <div class="content-card">
+                <h2>Science & English Block</h2>
+                <div class="activity-group"><strong>Science</strong><p>Cloud in a bottle experiment & general "lab" safety protocols.</p></div>
+                <div class="activity-group"><strong>English</strong><p>Grammar fundamentals and parts of speech overview.</p></div>
+            </div>
+        </div>
+
+        <div class="day-row">
+            <div class="day-label"><span>Day 3</span></div>
+            <div class="content-card">
+                <h2>Math & Art Block</h2>
+                <div class="activity-group"><strong>Math</strong><p>Area calculation exploration and multi-step word problem strategies.</p></div>
+                <div class="activity-group"><strong>Art</strong><p>Basic geometric shapes, master color values, and clean coloring techniques.</p></div>
+            </div>
+        </div>
+
+        <div class="day-row">
+            <div class="day-label"><span>Day 4</span></div>
+            <div class="content-card">
+                <h2>Science & English Block</h2>
+                <div class="activity-group"><strong>Science</strong><p>Interactive weather systems and cloud classification mapping.</p></div>
+                <div class="activity-group"><strong>English</strong><p>Active reading text annotations workshop.</p></div>
+            </div>
+        </div>
+
+        <div class="day-row">
+            <div class="day-label"><span>Day 5</span></div>
+            <div class="content-card">
+                <h2>Math & Art Block</h2>
+                <div class="activity-group"><strong>Math</strong><p>Simple fraction addition models.</p></div>
+                <div class="activity-group"><strong>Art</strong><p>Color mixing, shading fundamentals, and live drawing tutorials.</p></div>
+            </div>
+        </div>
+
+        <div class="day-row">
+            <div class="day-label"><span>Day 6</span></div>
+            <div class="content-card">
+                <h2>Science & English Block</h2>
+                <div class="activity-group"><strong>Science</strong><p>Cell Biology puzzle pieces building session.</p></div>
+                <div class="activity-group"><strong>English</strong><p>Creative storytelling and narrative story writing.</p></div>
+            </div>
+        </div>
+
+        <div class="day-row bg-highlight">
+            <div class="day-label">
+                <span>Day 7</span>
+                <div class="special-tag">✦ Craft</div>
+            </div>
+            <div class="content-card">
+                <h2>Math & Tie-Dye Art Block</h2>
+                <div class="activity-group"><strong>Math</strong><p>Coordinate point graphing grids.</p></div>
+                <div class="activity-group"><strong>Art</strong><p>Tie-Dye shirt creation! (Alternative low-mess arts available if needed).</p></div>
+            </div>
+        </div>
+
+        <div class="day-row">
+            <div class="day-label"><span>Day 8</span></div>
+            <div class="content-card">
+                <h2>Science & English Block</h2>
+                <div class="activity-group"><strong>Science</strong><p>Organ puzzle systems, human anatomy maps, and corn germination necklaces.</p></div>
+                <div class="activity-group"><strong>English</strong><p>Advanced grammar review, vocabulary development, and text structure.</p></div>
+            </div>
+        </div>
+
+        <div class="day-row bg-highlight">
+            <div class="day-label">
+                <span>Day 9</span>
+                <div class="special-tag">✦ Party!</div>
+            </div>
+            <div class="content-card">
+                <h2>Math, Crafts & Pizza Party</h2>
+                <div class="activity-group"><strong>Math</strong><p>Operations with like denominators and introduction to basic algebraic equations.</p></div>
+                <div class="activity-group"><strong>Art Rotation</strong><p>Hands-on rotation day: Pony bead styling, pipe cleaner critters, and interactive Origami.</p></div>
+                <div class="activity-group"><strong>Celebration</strong><p>Big Pizza Party, team awards, and closing camp ceremony!</p></div>
+            </div>
+        </div>
+
+    </section>
+
+</body>
+</html>

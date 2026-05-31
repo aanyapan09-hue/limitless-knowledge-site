@@ -1,0 +1,425 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Limitless Knowledge | Summer Camp</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --purple: #9d73ff;
+            --light-purple: #c3adff;
+            --yellow: #ffd966;
+            --blue: #b9e9ff;
+            --lilac: #E6E6FA; 
+            --black: #1a1a1a;
+            --white: #ffffff;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Inter', sans-serif;
+        }
+
+        body {
+            background-color: var(--lilac);
+            color: var(--black);
+            overflow-x: hidden;
+        }
+
+        /* --- Navigation --- */
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 5%;
+            background: var(--white);
+            border-bottom: 3px solid var(--black);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .logo {
+            font-weight: 900;
+            font-size: 1.5rem;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 20px;
+            list-style: none;
+            align-items: center;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: var(--black);
+            font-weight: 700;
+            font-size: 0.9rem;
+        }
+
+        .enroll-nav-btn {
+            background: var(--purple);
+            color: white !important;
+            padding: 10px 25px;
+            border-radius: 50px;
+            border: 2px solid var(--black);
+            box-shadow: 3px 3px 0px var(--black);
+        }
+
+        /* --- Hero Section --- */
+        .hero {
+            text-align: center;
+            padding: 80px 10%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            min-height: 70vh;
+            justify-content: center;
+        }
+
+        .badge {
+            background: var(--yellow);
+            padding: 8px 20px;
+            border-radius: 50px;
+            border: 2px solid var(--black);
+            font-size: 0.85rem;
+            font-weight: 800;
+            margin-bottom: 25px;
+        }
+
+        h1 {
+            font-size: clamp(3rem, 8vw, 5.5rem);
+            font-weight: 900;
+            line-height: 0.9;
+        }
+
+        .highlight-box {
+            background: var(--purple);
+            color: white;
+            padding: 10px 40px;
+            font-size: clamp(2.5rem, 7vw, 4.5rem);
+            font-weight: 900;
+            border-radius: 20px;
+            border: 4px solid var(--black);
+            display: inline-block;
+            transform: rotate(-1.5deg);
+            margin: 15px 0 35px 0;
+            box-shadow: 8px 8px 0px var(--black);
+        }
+
+        .hero-subtext {
+            max-width: 650px;
+            font-size: 1.2rem;
+            line-height: 1.5;
+            margin-bottom: 40px;
+            font-weight: 500;
+        }
+
+        /* --- Buttons --- */
+        .cta-group {
+            display: flex;
+            gap: 20px;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+        .btn-main {
+            padding: 18px 35px;
+            border-radius: 50px;
+            border: 3px solid var(--black);
+            font-weight: 800;
+            cursor: pointer;
+            text-decoration: none;
+            transition: transform 0.1s;
+            display: inline-block;
+        }
+
+        .btn-main:active { transform: translate(2px, 2px); }
+
+        .btn-purple {
+            background: var(--purple);
+            color: white;
+            box-shadow: 5px 5px 0px var(--black);
+        }
+
+        .btn-white {
+            background: white;
+            color: var(--black);
+            box-shadow: 5px 5px 0px var(--black);
+        }
+
+        /* --- Subjects Grid --- */
+        .subjects-section {
+            padding: 80px 5%;
+            text-align: center;
+        }
+
+        .section-tag {
+            background: var(--light-purple);
+            padding: 6px 18px;
+            border-radius: 50px;
+            border: 2px solid var(--black);
+            font-size: 0.85rem;
+            font-weight: 800;
+            display: inline-block;
+            margin-bottom: 20px;
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+            gap: 25px;
+            margin-top: 50px;
+        }
+
+        .card {
+            border: 3px solid var(--black);
+            border-radius: 25px;
+            padding: 35px;
+            text-align: left;
+            box-shadow: 7px 7px 0px var(--black);
+            background: white;
+        }
+
+        .card h3 { font-size: 1.8rem; margin: 15px 0; font-weight: 900; }
+        .card p { font-size: 1rem; color: #333; line-height: 1.4; }
+
+        .bg-blue { background-color: var(--blue); }
+        .bg-purple { background-color: var(--light-purple); }
+        .bg-yellow { background-color: var(--yellow); }
+
+        /* --- Mission Section --- */
+        .mission-section {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 100px 10%;
+            gap: 60px;
+            flex-wrap: wrap;
+        }
+
+        .mission-content { flex: 1; min-width: 320px; }
+        
+        .mission-title {
+            font-size: clamp(2.5rem, 5vw, 3.8rem);
+            font-weight: 900;
+            margin: 20px 0;
+            line-height: 1;
+        }
+
+        .mission-text {
+            font-size: 1.2rem;
+            line-height: 1.6;
+            margin-bottom: 25px;
+            color: #222;
+        }
+
+        .read-story {
+            font-weight: 800;
+            color: var(--black);
+            text-decoration: underline;
+            text-underline-offset: 6px;
+            font-size: 1.1rem;
+        }
+
+        .mission-quote-card {
+            flex: 1;
+            min-width: 320px;
+            background: var(--light-purple);
+            border: 4px solid var(--black);
+            border-radius: 25px;
+            padding: 50px;
+            position: relative;
+            box-shadow: 12px 12px 0px var(--black);
+        }
+
+        .quote-inner p {
+            font-size: 1.6rem;
+            font-weight: 900;
+            line-height: 1.2;
+            margin-top: 15px;
+        }
+
+        .alert-bubble {
+            position: absolute;
+            bottom: -25px;
+            left: -25px;
+            background: var(--yellow);
+            width: 70px;
+            height: 70px;
+            border-radius: 50%;
+            border: 4px solid var(--black);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 900;
+            font-size: 2.2rem;
+        }
+
+        /* --- CTA Footer Section --- */
+        .cta-section { padding: 80px 10% 120px 10%; }
+
+        .cta-banner {
+            background: var(--purple);
+            color: white;
+            border: 4px solid var(--black);
+            border-radius: 30px;
+            padding: 80px 40px;
+            text-align: center;
+            box-shadow: 12px 12px 0px var(--black);
+            margin-bottom: 60px;
+        }
+
+        .cta-banner h2 { font-size: clamp(2rem, 5vw, 3.5rem); font-weight: 900; margin-bottom: 15px; }
+        .cta-banner p { font-size: 1.2rem; font-weight: 600; opacity: 0.95; }
+
+        .info-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 25px;
+        }
+
+        .info-card {
+            background: white;
+            border: 3px solid var(--black);
+            border-radius: 25px;
+            padding: 30px;
+            box-shadow: 6px 6px 0px var(--black);
+        }
+
+        .info-card h3 { margin: 12px 0 8px 0; font-weight: 900; font-size: 1.4rem; }
+        .info-card p { font-size: 1rem; color: #444; font-weight: 500; }
+        
+        .card-icon { 
+            font-size: 1.5rem; 
+            background: #f0f0f0; 
+            width: 45px; 
+            height: 45px; 
+            display: flex; 
+            align-items: center; 
+            justify-content: center; 
+            border-radius: 10px;
+            border: 2px solid var(--black);
+        }
+
+        @media (max-width: 600px) {
+            .cta-group { flex-direction: column; width: 100%; }
+            .btn-main { width: 100%; text-align: center; }
+        }
+    </style>
+</head>
+<body>
+
+    <nav>
+        <div class="logo">
+            <div style="background: var(--purple); width: 32px; height: 32px; border-radius: 8px; border: 2px solid black; display: flex; align-items: center; justify-content: center; color: white;">✦</div>
+            Limitless Knowledge
+        </div>
+        <ul class="nav-links">
+            <li><a href="about.html">About</a></li>
+            <li><a href="counselors.html">Counselors</a></li>
+            <li><a href="curriculum.html">Curriculum</a></li>
+            <li><a href="schedule.html">Schedule</a></li>
+            <li><a href="supplies.html">Supplies</a></li>
+            <li><a href="enroll.html" class="enroll-nav-btn">Enroll</a></li>
+        </ul>
+    </nav>
+
+    <section class="hero">
+        <div class="badge">✨ Summer 2026 enrollment open</div>
+        <h1>Curiosity has</h1>
+        <div class="highlight-box">no limits.</div>
+        <p class="hero-subtext">
+            Limitless Knowledge is a summer camp for grades 3–5 where kids learn through hands-on science, story-writing, math adventures, and a whole lot of art. Run by students, made for students.
+        </p>
+        <div class="cta-group">
+            <a href="enroll.html" class="btn-main btn-purple">Enroll your camper →</a>
+            <a href="curriculum.html" class="btn-main btn-white">See the curriculum</a>
+        </div>
+    </section>
+
+    <section class="subjects-section">
+        <span class="section-tag">What we teach</span>
+        <h2 style="font-size: clamp(2rem, 5vw, 3.5rem); font-weight: 900;">Four subjects. Zero boring moments.</h2>
+
+        <div class="grid">
+            <div class="card bg-blue">
+                <div style="font-size: 2rem;">📖</div>
+                <h3>English</h3>
+                <p>Grammar, annotation, creative writing & character day.</p>
+            </div>
+            <div class="card bg-purple">
+                <div style="font-size: 2rem;">🔢</div>
+                <h3>Math</h3>
+                <p>Visual learning with pies, shapes, and scavenger hunts.</p>
+            </div>
+            <div class="card bg-yellow">
+                <div style="font-size: 2rem;">🧪</div>
+                <h3>Science</h3>
+                <p>Cell biology, weather systems, and Spy Kids forensics.</p>
+            </div>
+            <div class="card">
+                <div style="font-size: 2rem;">🎨</div>
+                <h3>Art</h3>
+                <p>Tie-dye, origami, pony beads & paper plate scenes.</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="mission-section">
+        <div class="mission-content">
+            <span class="section-tag" style="background: var(--blue);">Our mission</span>
+            <h2 class="mission-title">We spark intellectual & innovative curiosity in kids.</h2>
+            <p class="mission-text">
+                By empowering education in fun and vibrant ways, we help kids get ahead and 
+                use their knowledge to discover their limitless potential.
+            </p>
+            <a href="#" class="read-story">Read our story →</a>
+        </div>
+        
+        <div class="mission-quote-card">
+            <div class="quote-inner">
+                <span style="font-size: 2.2rem;">✨</span>
+                <p>"Our purpose is to provide fun, hands-on learning experiences that allow us to utilize our education, creativity, and leadership skills in order to succeed. Being run by students for students making it relatable and intriguing. 
+"</p>
+            </div>
+            <div class="alert-bubble">!</div>
+        </div>
+    </section>
+
+    <section class="cta-section">
+        <div class="cta-banner">
+            <span style="font-size: 2.5rem; display: block; margin-bottom: 15px;">⭐</span>
+            <h2>Ready for the best summer yet?</h2>
+            <p>Spots are limited. Reserve your camper's seat before we sell out.</p>
+            <a href="enroll.html" class="btn-main btn-white" style="margin-top: 30px;">Sign up now →</a>
+        </div>
+
+        <div class="info-grid">
+            <div class="info-card">
+                <div class="card-icon">👥</div>
+                <h3>Meet your counselors</h3>
+                <p>The five students running the show.</p>
+            </div>
+            <div class="info-card">
+                <div class="card-icon">📅</div>
+                <h3>See the schedule</h3>
+                <p>9 days of content, day by day.</p>
+            </div>
+            <div class="info-card">
+                <div class="card-icon">📖</div>
+                <h3>Supply list</h3>
+                <p>Everything your camper should bring.</p>
+            </div>
+        </div>
+    </section>
+
+</body>
+</html>

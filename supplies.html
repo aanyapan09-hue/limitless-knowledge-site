@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Supplies | Limitless Knowledge</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --purple: #9d73ff;
+            --light-purple: #c3adff;
+            --yellow: #ffd966;
+            --blue: #b9e9ff;
+            --off-white: #faf8ff; 
+            --black: #1a1a1a;
+            --white: #ffffff;
+            --soft-gradient: linear-gradient(90deg, #b9e9ff 0%, #c3adff 100%);
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Inter', sans-serif; }
+        body { background-color: var(--off-white); color: var(--black); line-height: 1.5; }
+
+        /* --- Updated Navigation --- */
+        nav {
+            display: flex; justify-content: space-between; align-items: center;
+            padding: 20px 5%; background: var(--white); border-bottom: 3px solid var(--black);
+            position: sticky; top: 0; z-index: 1000;
+        }
+        .logo { font-weight: 900; font-size: 1.5rem; display: flex; align-items: center; gap: 10px; text-decoration: none; color: black; }
+        .nav-links { display: flex; gap: 20px; list-style: none; align-items: center; }
+        .nav-links a { text-decoration: none; color: var(--black); font-weight: 700; font-size: 0.9rem; }
+        
+        .enroll-nav-btn {
+            background: var(--purple); color: white !important; padding: 10px 25px;
+            border-radius: 50px; border: 2px solid var(--black); box-shadow: 3px 3px 0px var(--black);
+            text-decoration: none; font-weight: 700;
+        }
+
+        /* --- Header --- */
+        header { padding: 80px 10% 40px 10%; }
+        .badge {
+            background: var(--blue); padding: 6px 18px; border-radius: 50px;
+            border: 2px solid var(--black); font-size: 0.85rem; font-weight: 800; display: inline-block; margin-bottom: 20px;
+        }
+        h1 { font-size: clamp(2.5rem, 6vw, 4rem); font-weight: 900; line-height: 1.1; margin-bottom: 20px; }
+        .intro-text { max-width: 700px; font-size: 1.1rem; font-weight: 500; color: #444; }
+
+        /* --- Supplies Grid --- */
+        .supplies-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 20px;
+            padding: 20px 10%;
+        }
+
+        .supply-item {
+            background: var(--white);
+            border: 2px solid var(--black);
+            border-radius: 20px;
+            padding: 25px;
+            display: flex;
+            align-items: center;
+            gap: 20px;
+            box-shadow: 4px 4px 0px var(--black);
+        }
+
+        .icon-box {
+            width: 50px; height: 50px;
+            background: #eee6ff;
+            border: 2px solid var(--black);
+            border-radius: 12px;
+            display: flex; align-items: center; justify-content: center;
+            font-size: 1.2rem;
+        }
+
+        .supply-info h3 { font-size: 1.2rem; font-weight: 900; }
+        .supply-info p { font-size: 0.85rem; font-weight: 500; color: #555; }
+
+        /* --- Extra Section --- */
+        .extra-box {
+            margin: 60px 10% 100px 10%;
+            padding: 40px;
+            background: var(--soft-gradient);
+            border: 3px solid var(--black);
+            border-radius: 25px;
+            box-shadow: 8px 8px 0px var(--black);
+        }
+        .extra-box h2 { font-size: 2rem; font-weight: 900; margin-bottom: 10px; display: flex; align-items: center; gap: 10px; }
+        .extra-box p { font-size: 1.1rem; font-weight: 500; max-width: 800px; }
+
+        @media (max-width: 768px) {
+            header, .supplies-grid, .extra-box { padding-left: 5%; padding-right: 5%; }
+            .nav-links { gap: 10px; }
+            .nav-links a { font-size: 0.8rem; }
+        }
+    </style>
+</head>
+<body>
+
+    <nav>
+        <a href="index.html" class="logo">
+            <div style="background: var(--purple); width: 32px; height: 32px; border-radius: 8px; border: 2px solid black; display: flex; align-items: center; justify-content: center; color: white;">✦</div>
+            Limitless Knowledge
+        </a>
+        <ul class="nav-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="counselors.html">Counselors</a></li>
+            <li><a href="curriculum.html">Curriculum</a></li>
+            <li><a href="schedule.html">Schedule</a></li>
+            <li><a href="supplies.html">Supplies</a></li>
+            <li><a href="enroll.html" class="enroll-nav-btn">Enroll</a></li>
+        </ul>
+    </nav>
+
+    <header>
+        <span class="badge">Pack your bag</span>
+        <h1>What to bring to camp.</h1>
+        <p class="intro-text">A quick checklist so your camper shows up ready for nine days of building, drawing, experimenting, and writing. Everything else? We've got it covered.</p>
+    </header>
+
+    <section class="supplies-grid">
+        <div class="supply-item">
+            <div class="icon-box">✏️</div>
+            <div class="supply-info">
+                <h3>Pencil</h3>
+                <p>For all writing & math</p>
+            </div>
+        </div>
+
+        <div class="supply-item">
+            <div class="icon-box">🖊️</div>
+            <div class="supply-info">
+                <h3>Highlighters</h3>
+                <p>Annotations and color-coding</p>
+            </div>
+        </div>
+
+        <div class="supply-item">
+            <div class="icon-box">🎨</div>
+            <div class="supply-info">
+                <h3>Color Pencils</h3>
+                <p>For art & worksheets</p>
+            </div>
+        </div>
+
+        <div class="supply-item">
+            <div class="icon-box">📓</div>
+            <div class="supply-info">
+                <h3>Notebook</h3>
+                <p>For notes and journaling</p>
+            </div>
+        </div>
+
+        <div class="supply-item">
+            <div class="icon-box">🧼</div>
+            <div class="supply-info">
+                <h3>Eraser</h3>
+                <p>Mistakes are part of learning!</p>
+            </div>
+        </div>
+
+        <div class="supply-item">
+            <div class="icon-box">✨</div>
+            <div class="supply-info">
+                <h3>Glue Stick</h3>
+                <p>Crafts and worksheets</p>
+            </div>
+        </div>
+
+        <div class="supply-item">
+            <div class="icon-box">👕</div>
+            <div class="supply-info">
+                <h3>Old White T-Shirt</h3>
+                <p>For tie-dye day — wear something you love</p>
+            </div>
+        </div>
+
+        <div class="supply-item">
+            <div class="icon-box">✂️</div>
+            <div class="supply-info">
+                <h3>Child-Friendly Scissors</h3>
+                <p>Safety first ✂️</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="extra-box">
+        <h2>A little extra ✨</h2>
+        <p>Snacks, water bottle, and comfy clothes are always a good idea. On Character Day, dress as your favorite character from a book, movie, or show!</p>
+    </section>
+
+</body>
+</html>

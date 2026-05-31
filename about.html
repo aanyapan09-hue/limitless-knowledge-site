@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About | Limitless Knowledge</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --purple: #9d73ff;
+            --light-purple: #c3adff;
+            --yellow: #ffd966;
+            --blue: #b9e9ff;
+            --off-white: #faf8ff; 
+            --black: #1a1a1a;
+            --white: #ffffff;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Inter', sans-serif; }
+        body { background-color: var(--off-white); color: var(--black); line-height: 1.5; overflow-x: hidden; }
+
+        /* --- Navigation --- */
+        nav {
+            display: flex; justify-content: space-between; align-items: center;
+            padding: 20px 5%; background: var(--white); border-bottom: 3px solid var(--black);
+            position: sticky; top: 0; z-index: 1000;
+        }
+        .logo { font-weight: 900; font-size: 1.5rem; display: flex; align-items: center; gap: 10px; text-decoration: none; color: black; }
+        .nav-links { display: flex; gap: 20px; list-style: none; align-items: center; }
+        .nav-links a { text-decoration: none; color: var(--black); font-weight: 700; font-size: 0.9rem; }
+        .enroll-nav-btn {
+            background: var(--purple); color: white !important; padding: 10px 25px;
+            border-radius: 50px; border: 2px solid var(--black); box-shadow: 3px 3px 0px var(--black);
+        }
+
+        /* --- Hero Section --- */
+        .hero { padding: 80px 10% 60px 10%; }
+        .badge {
+            background: var(--blue); padding: 6px 18px; border-radius: 50px;
+            border: 2px solid var(--black); font-size: 0.85rem; font-weight: 800; display: inline-block; margin-bottom: 20px;
+        }
+        h1 { font-size: clamp(2.5rem, 6vw, 4.5rem); font-weight: 900; line-height: 1.1; margin-bottom: 25px; max-width: 900px; }
+        .intro-text { max-width: 700px; font-size: 1.2rem; font-weight: 500; color: #333; margin-bottom: 50px; }
+
+        /* --- Mission Cards --- */
+        .mission-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 30px; margin-bottom: 80px; }
+        .m-card { border: 3px solid var(--black); border-radius: 25px; padding: 40px; box-shadow: 8px 8px 0px var(--black); }
+        .m-card h2 { font-size: 2rem; font-weight: 900; margin: 15px 0; }
+        .bg-lilac { background-color: var(--light-purple); }
+        .bg-cyan { background-color: var(--blue); }
+
+        /* --- Beliefs Section --- */
+        .beliefs-section { 
+            background: linear-gradient(180deg, #e0d4ff 0%, #ffffff 100%); 
+            padding: 100px 10%; text-align: center; border-top: 3px solid var(--black);
+        }
+        .beliefs-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 25px; margin-top: 50px; }
+        .belief-card { background: white; border: 3px solid var(--black); border-radius: 20px; padding: 40px 30px; text-align: left; box-shadow: 6px 6px 0px var(--black); }
+        .belief-card h3 { font-size: 1.5rem; font-weight: 900; margin: 15px 0 10px 0; }
+        .icon { font-size: 1.5rem; color: var(--purple); }
+
+        /* --- Goals Section --- */
+        .goals-section { padding: 100px 10%; display: flex; align-items: center; gap: 60px; flex-wrap: wrap; }
+        .goals-content { flex: 1; min-width: 320px; }
+        .goals-list { flex: 1; min-width: 350px; list-style: none; }
+        .goal-item { 
+            background: white; border: 2px solid var(--black); border-radius: 15px; 
+            padding: 20px; margin-bottom: 15px; font-weight: 700; display: flex; align-items: center;
+            box-shadow: 4px 4px 0px var(--black);
+        }
+        .goal-item::before { content: "★"; margin-right: 15px; color: var(--purple); font-size: 1.2rem; }
+
+        @media (max-width: 768px) {
+            .mission-grid { grid-template-columns: 1fr; }
+            .hero, .beliefs-section, .goals-section { padding-left: 5%; padding-right: 5%; }
+        }
+    </style>
+</head>
+<body>
+
+    <nav>
+        <a href="index.html" class="logo">
+            <div style="background: var(--purple); width: 32px; height: 32px; border-radius: 8px; border: 2px solid black; display: flex; align-items: center; justify-content: center; color: white;">✦</div>
+            Limitless Knowledge
+        </a>
+        <ul class="nav-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="counselors.html">Counselors</a></li>
+            <li><a href="curriculum.html">Curriculum</a></li>
+            <li><a href="schedule.html">Schedule</a></li>
+            <li><a href="supplies.html">Supplies</a></li>
+            <li><a href="enroll.html" class="enroll-nav-btn">Enroll</a></li>
+        </ul>
+    </nav>
+
+    <header class="hero">
+        <span class="badge">About the camp</span>
+        <h1>A summer camp built by students, for students.</h1>
+        <p class="intro-text">Limitless Knowledge is a 9-day summer camp for grades 3–5. We blend academics with adventure — turning grammar lessons into character days, fractions into pizza parties, and science into Spy Kids investigations.</p>
+
+        <div class="mission-grid">
+            <div class="m-card bg-lilac">
+                <div class="icon">◎</div>
+                <h2>Our mission</h2>
+                <p>We spark intellectual and innovative curiosity in kids through our summer camp. By empowering education in fun and vibrant ways, we help kids get ahead and use their knowledge to discover their limitless potential.</p>
+            </div>
+            <div class="m-card bg-cyan">
+                <div class="icon">♡</div>
+                <h2>Why we exist</h2>
+                <p>Summer learning shouldn't feel like more school. We give kids hands-on, creative experiences that make academics feel exciting and relevant to their actual lives.</p>
+            </div>
+        </div>
+    </header>
+
+    <section class="beliefs-section">
+        <h2 style="font-size: 3rem; font-weight: 900;">What we believe</h2>
+        <div class="beliefs-grid">
+            <div class="belief-card">
+                <div class="icon">💡</div>
+                <h3>Curiosity over compliance</h3>
+                <p>Kids learn best when they ask 'why?', we build lessons that invite questions, not silence them.</p>
+            </div>
+            <div class="belief-card">
+                <div class="icon">💜</div>
+                <h3>Relatable role models</h3>
+                <p>Being taught by older students, not adults, makes learning feel cooler and more achievable.</p>
+            </div>
+            <div class="belief-card">
+                <div class="icon">🏅</div>
+                <h3>Confidence through doing</h3>
+                <p>Every kid leaves with finished projects, new skills, and stories they can't wait to tell.</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="goals-section">
+        <div class="goals-content">
+            <span class="badge" style="background: var(--yellow);">Our goals</span>
+            <h2 style="font-size: 3.5rem; font-weight: 900; margin: 20px 0;">Bigger than a camp.</h2>
+            <p style="font-size: 1.1rem; max-width: 500px;">We're building teamwork, planning, and management skills while making a real impact in our community. We want every camper to leave with sharper academic confidence — and a story they'll keep telling.</p>
+        </div>
+        <div class="goals-list">
+            <div class="goal-item">Build teamwork, leadership, and communication for staff and campers</div>
+            <div class="goal-item">Strengthen academic confidence in our local youth</div>
+            <div class="goal-item">Partner with local businesses through outreach</div>
+            <div class="goal-item">Deepen our own knowledge through teaching</div>
+        </div>
+    </section>
+
+</body>
+</html>
