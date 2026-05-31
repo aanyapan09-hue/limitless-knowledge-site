@@ -44,7 +44,7 @@
 
         .counselors-container {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(450px, 1fr));
+            grid-template-columns: repeat(2, 1fr); /* Strictly forces exactly 2 columns on desktop */
             gap: 35px;
             padding: 20px 10% 100px 10%;
             max-width: 1200px;
@@ -78,7 +78,7 @@
 
         .email-link {
             width: 100%;
-            padding: 15px 20px;
+            padding: 15px 10px;
             background: var(--white);
             border: 3px solid var(--black);
             border-radius: 14px;
@@ -88,7 +88,9 @@
             text-align: center;
             box-shadow: 4px 4px 0px var(--black);
             transition: transform 0.1s, box-shadow 0.1s;
-            word-break: break-all;
+            white-space: nowrap; /* Prevents the email from breaking onto two lines */
+            overflow: hidden;
+            text-overflow: ellipsis;
             margin-top: auto;
         }
         
@@ -97,7 +99,7 @@
         }
 
         .email-small {
-            font-size: 0.85rem;
+            font-size: 0.82rem; /* Shrunk just a tiny bit more to ensure it sits on one line */
         }
 
         .email-link:hover {
@@ -115,9 +117,16 @@
         .card-blue { background-color: var(--blue); }
         .card-mint { background-color: var(--pale-mint); }
 
+        /* Tablet break down */
+        @media (max-width: 992px) {
+            .counselors-container { grid-template-columns: 1fr; max-width: 600px; }
+            .email-small { font-size: 0.9rem; } /* Gives space back on mobile stacks */
+        }
+
         @media (max-width: 550px) {
-            .counselors-container { grid-template-columns: 1fr; padding-left: 5%; padding-right: 5%; }
+            .counselors-container { padding-left: 5%; padding-right: 5%; }
             .counselor-card { padding: 30px 20px; }
+            .email-small { font-size: 0.78rem; } /* Extra protection for tiny phone screens */
         }
     </style>
 </head>
